@@ -109,6 +109,7 @@
   border-color: var(--azul-claro-hover);
 }
 
+
 @media (max-width: 500px) {
   .subheader h1 {
     display: none;
@@ -231,8 +232,10 @@
 
 p .btn,
 a.btn {
-  background-color: var(--azul-claro);
-  border-color: var(--azul-claro);
+  background-color:#2C3333 ;
+  border-color: #2C3333;
+  /* background-color: var(--azul-claro); */
+  /* border-color: var(--azul-claro); */
   font-weight: 500;
   transition: 0.8s;
 }
