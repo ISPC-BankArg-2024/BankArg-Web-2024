@@ -30,10 +30,11 @@ footer {
   padding: 18px 0;
   /* font-size: 20px; */
 }
-button{
+a{
   font-weight: lighter;
+ background-color: #a5c9ca;
 }
-button:hover{
+a:hover{
   background-color: #2C3333;
   color: whitesmoke;
 }
