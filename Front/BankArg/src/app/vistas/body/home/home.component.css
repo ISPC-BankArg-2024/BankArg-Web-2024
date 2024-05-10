@@ -1,5 +1,9 @@
 /* Features */
 
+div .col-lg-4{
+  
+  padding-top: 8%;
+}
 .feature-icon {
   width: 4rem;
   height: 4rem;
