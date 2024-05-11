@@ -9,11 +9,11 @@
 
   <textarea id="tu_consulta" rows="4" cols="50"></textarea>
 
-  <button id="Enviar">Enviar</button>
+  <button id="Enviar" (click)="functionEnviar()">Enviar</button>
 
-  <button id="seleccionar_fecha" onclick="abrirCalendario()">Seleccionar fecha:</button>
+  <button id="seleccionar_fecha" (click)="funcionNoActiva()">Seleccionar fecha:</button>
 
-  <button id="Solicitar_turno">Solicitar turno</button>
+  <button id="Solicitar_turno" (click)="funcionNoActiva()">Solicitar turno</button>
 </main>
 
 <!-- JS de Soporte -->
