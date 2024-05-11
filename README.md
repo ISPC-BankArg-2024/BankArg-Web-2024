@@ -15,3 +15,18 @@
 |[Videos](https://github.com/ISPC-BankArg-2024/.github/wiki/10-Videos)|Todos los videos de los proyectos|
 
 ***
+
+## Personal Involucrado
+
+| Nombre              | Rol        | Usuario de Github | Responsabilidad | Información de contacto          |
+|---------------------|------------|-------------------|-----------------|---------------------------------|
+| Ezequiel Giampaoli  | Developer / Scrum Master  | egiam             | Developer       | ezegiampaoli@gmail.com          |
+| Maria Laura Peralta | Developer  | PeraltaMariaL-ISPC| Developer       | lali.635@gmail.com              |
+| Valentin ALterio    | Developer  | Valealterio       | Developer       | alteriovalentin01@gmail.com     |
+| Joaquin Bonvechi    | Developer  | JoacoBonvechi     | Developer       | joacobonvechi2272002@gmail.com  |
+| Rodrigo Leiva       | Developer  | rodrileiv         | Developer       | rodrigoleiva1995@hotmail.com   |
+| Paula Cabrera       | Developer / Scrum Master  | paulac23          | Developer       | paucabrera95@gmail.com         |
+| Brian Galarza       | Developer  | galarzabrian      | Developer       | briangalarza71@gmail.com       |
+| David Spuler        | Developer  | davidspuler       | Developer       | davidspuler68@gmail.com        |
+| Roberto Carlos Osores | Developer | roberto-osores   | Developer       | osoresroberto@gmail.com        |
+| Belen Riquelme      | Developer  | bely092           | Developer       | koen.lion92@gmail.com          |
