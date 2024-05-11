@@ -1,5 +1,3 @@
-## Proyecto Kangbang: https://github.com/orgs/ISPC-BankArg-2024/projects/1/views/1
-
 # Indice
 
 |Topic|Description|
@@ -31,3 +29,8 @@
 | David Spuler        | Developer  | davidspuler       | Developer       | davidspuler68@gmail.com        |
 | Roberto Carlos Osores | Developer | roberto-osores   | Developer       | osoresroberto@gmail.com        |
 | Belen Riquelme      | Developer  | bely092           | Developer       | koen.lion92@gmail.com          |
+
+***
+
+## Mapa: https://github.com/ISPC-BankArg-2024/BankArg-Web-2024/blob/main/Documentacion%202023/Mapa/BankArg-Web-Mapa.pdf
+## Proyecto Kangbang: https://github.com/orgs/ISPC-BankArg-2024/projects/1/views/1
