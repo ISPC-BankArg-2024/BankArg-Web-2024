@@ -1,81 +1,49 @@
--> cd Back/bankarg
--> pip install djangorestframework
--> pip install djangorestframework-simplejwt
--> pip install django-cors-headers
--> pip install django-rest-knox
--> pip install django_rest_passwordreset
-[Start XAMPP with apache and mysql]
-[change the port in settings.py for your mysql]
--> python manage.py makemigrations
--> python manage.py migrate
--> python manage.py createsuperuser
-    -> name: admin
-    -> email: admin@gmail.com
-    -> password: 12345
-    -> repeat: 12345
-    -> y
--> python manage.py runserver
+1. Iniciar la aplicación
+→ Desde la terminal de VSCode ejecutamos los siguientes comandos:
+    -> cd Back/bankarg
+    -> pip install djangorestframework
+    -> pip install djangorestframework-simplejwt
+    -> pip install django-cors-headers
+    -> pip install django-rest-knox
+    -> pip install django_rest_passwordreset
+A continuación:
+    -> Iniciamos desde XAMPP Apache y MySQL
+        [Se debe revisar y actualizar el puerto de la BD en settings.py]
+        [Si se trabaja dentro de un entorno (enviroment), se debe 'descomentar' la línea 13 de setting.py]
 
-posible necesidad de instalar: 
--> pip install djangorestframework-jwt
--> pip install djangorestframework djangorestframework-jwt
+2. Crear la BD sobre la que se trabajará en local:
+    -> Desde XAMPP ingresamos a la opción de Admin de MySQL
+    -> Ingresamos a la pestaña Base de datos
+    -> Creamos la BD llamada 'bankarg'
 
----
-DJANGO:
-Instalación: pip install django
+3. Cargar la estructura de la BD:
+→ Desde la terminal de VSCODE ejecutamos:
+    -> python manage.py makemigrations
+    -> python manage.py migrate
+    -> python manage.py createsuperuser
+        -> name: admin
+        -> email: admin@gmail.com
+        -> password: 12345
+        -> repeat: 12345
+        -> y
 
-Creación del proyecto: django-admin startproyect Banco
-(si el anterior no funciona: python -m django startproject Banco)
-Se editan los archivos de configuración del proyecto
+4. Ejecutamos el servidor para cargar la BD con los datos:
+    -> python manage.py runserver
+    -> en la terminal veremos el enlace al dashboard: http://127.0.0.1:8000/admin
+    -> Accedemos con los datos cargados en el paso anterior
 
-Creación de una aplicación: django-admin startapp banco
-(si el anterior no funciona: python -m django startapp banco)
-Se crean las clases a partir del modelo de la BD
+---------------------------------
+ERRORES:
+ 
+→> Error: [Error loading MySQLdb Module 'Did you install mysqlclient or MySQL-python?']
+>> SOLUCION:
+    -> Ejecutar los siguientes comandos en CMD:
+        -> pip install mysqlclient
+        -> pip install pymysql
+* Link Solucion: https://stackoverflow.com/questions/46902357/error-loading-mysqldb-module-did-you-install-mysqlclient-or-mysql-python
 
-Creación de la BD:
-(con el servidor de la bd corriendo)
-En la carpeta del proyecto, se ejecuta: python manage.py migrate
-
-Para migrar los modelos a la BD:
-python manage.py makemigrations
-
-Ejecutar el servidor:
-python manage.py runserver
-
-
-pip install djangorestframework
-
-pip install djangorestframework-simplejwt
-
-
---- 
-En CMD:
-
--> pip install django
-
--> python manage.py makemigrations
-
--> python manage.py migrate
-
-Posible Error: [Error loading MySQLdb Module 'Did you install mysqlclient or MySQL-python?']
-Link Solucion: https://stackoverflow.com/questions/46902357/error-loading-mysqldb-module-did-you-install-mysqlclient-or-mysql-python
-Comandos CMD 'solucion':
--> pip install mysqlclient
--> pip install pymysql
-
-Posible Error: [django.db.utils.OperationalError: (1045:Access denied for user 'root'@'localhost' (using password: NO)]
-Link 'solucion' (no tan solucion): https://stackoverflow.com/questions/50652587/django-db-utils-operationalerror-1045access-denied-for-user-rootlocalhost
-x Hacer en codigo: 
--> Ir a settings.py -> buscar Diccionario/Lista 'DATABASES' -> cambiar temporalmente el valor de password de [' '](nulo) a tu pasword de mysql
+→> Error: [django.db.utils.OperationalError: (1045:Access denied for user 'root'@'localhost' (using password: NO)]
+>> SOLUCION: 
+    -> Ir a settings.py -> buscar Diccionario/Lista 'DATABASES' -> cambiar temporalmente el valor de password de [' '](nulo) a tu pasword de mysql
 Importante!! -> Cuando dejes de trabajar y hagas push, elimina tu password de settings.py
-
-
--> python manage.py runserver
-
-
----
--> python manage.py createsuperuser
-
----
--> pip install djangorestframework
--> pip install djangorestframework-simplejwt
+* Link Solucion: https://stackoverflow.com/questions/50652587/django-db-utils-operationalerror-1045access-denied-for-user-rootlocalhost
