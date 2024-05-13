@@ -1,0 +1,14 @@
+→ Tener python instalado y actualizado
+→ Instalar django:
+    -> pip install django
+
+→ Instalar XAMPP:
+    -> Desde https://www.apachefriends.org/ descargar la última versión
+
+→ Para la conexión a mysql:
+    -> pip install pymysql
+    -> pip install mysqlclient
+
+→ Además, es posible que sea necesario instalar los siguientes paquetes de Django:
+    -> pip install djangorestframework-jwt
+    -> pip install djangorestframework djangorestframework-jwt
