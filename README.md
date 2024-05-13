@@ -1,4 +1,5 @@
 # Indice
+<br>
 
 |Topic|Description|
 |---|---|
@@ -13,7 +14,10 @@
 |[Testing](https://github.com/ISPC-BankArg-2024/.github/wiki/09-Testing)|Todo lo de testing del proyecto|
 |[Videos](https://github.com/ISPC-BankArg-2024/.github/wiki/10-Videos)|Todos los videos de los proyectos|
 
-***
+<br>
+
+
+
 
 ## Personal Involucrado
 
@@ -30,7 +34,9 @@
 | Roberto Carlos Osores | Developer | roberto-osores   | Developer       | osoresroberto@gmail.com        |
 | Belen Riquelme      | Developer  | bely092           | Developer       | koen.lion92@gmail.com          |
 
-***
+<br>
 
-## Mapa: https://github.com/ISPC-BankArg-2024/BankArg-Web-2024/blob/main/Documentacion%202023/Mapa/BankArg-Web-Mapa.pdf
-## Proyecto Kangbang: https://github.com/orgs/ISPC-BankArg-2024/projects/1/views/1
+
+
+### Mapa: https://github.com/ISPC-BankArg-2024/BankArg-Web-2024/blob/main/Documentacion%202023/Mapa/BankArg-Web-Mapa.pdf
+### <center>Proyecto Kangbang: https://github.com/orgs/ISPC-BankArg-2024/projects/1/views/1</center>
