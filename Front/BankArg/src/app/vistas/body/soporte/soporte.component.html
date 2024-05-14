@@ -1,7 +1,107 @@
 <main class="main">
-  <h1 id="soporte">Soporte</h1>
+  <h1 id="soporte">Preguntas Frecuentes</h1>
 
-  <p id="faq_pregunt">FAQ (Preguntas Frecuentes)</p>
+  
+  <!-- FAQ START -->
+  <div class="accordion container" id="accordionFAQ">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#whoBankArg" aria-expanded="false" aria-controls="collapseOne">
+          ¿Que es BankArg?
+        </button>
+      </h2>
+      <div id="whoBankArg" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+        <div class="accordion-body">
+          <!--Accordion ¿Que es BankArg? START-->
+          <div class="accordion" id="accordionBankArgWho">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#who1" aria-expanded="false" aria-controls="who1">
+                  BankArg
+                </button>
+              </h2>
+              <div id="who1" class="accordion-collapse collapse" data-bs-parent="#accordionBankArgWho">
+                <div class="accordion-body">
+                  <strong>BankArg</strong> es la solucion digital y de vanguardia para todos tus tramites y gestiones bancarias.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#who2" aria-expanded="false" aria-controls="who2">
+                  El Equipo 
+                </button>
+              </h2>
+              <div id="who2" class="accordion-collapse collapse" data-bs-parent="#accordionBankArgWho">
+                <div class="accordion-body">
+                  <strong>BankArg</strong> fue desarrollada por un grupo de estudiantes del ISPC como proyecto integrador de los saberes adquiridos durante el cursado de la Tecnicatura Superior en Desarrollo Web y Aplicaciones Digitales.<br> Aprende mas sobre nosotros <a routerLink="/sobre"> aqui </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Accordion ¿Que es BankArg? END-->
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#BankArgHow" aria-expanded="false" aria-controls="BankArgHow">
+          ¿Como se usa BankArg?
+        </button>
+      </h2>
+      <div id="BankArgHow" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+        <div class="accordion-body">
+          <!--Como se usa BankArg START-->
+          <div class="accordion" id="accordionBankArgHow">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#how1" aria-expanded="false" aria-controls="how1">
+                  Creando una cuenta
+                </button>
+              </h2>
+              <div id="how1" class="accordion-collapse collapse" data-bs-parent="#accordionBankArgHow">
+                <div class="accordion-body">
+                  <a routerLink="/register"> Registrarte </a> es facil, rapido y seguro!<br> Solo necesitas ingresar tus datos personales y estaras usando <strong>BankArg</strong> en unos instantes.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#how2" aria-expanded="false" aria-controls="how2">
+                  Conceptos Basicos 
+                </button>
+              </h2>
+              <div id="how2" class="accordion-collapse collapse" data-bs-parent="#accordionBankArgHow">
+                <div class="accordion-body">
+                  En <strong>BankArg</strong> creemos que: !La informacion es poder¡ Sobre todo aquella de una fuente segura y confiable.<br> Y por eso hemos te recomendamos visitar <a href="https://www.argentina.gob.ar/economia/inclusion-financiera" target="_blank"> este enlace </a> si aun estas aprendiendo las bases de la economia financiera.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Como se usa BankArg END-->
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#BankArgOthers" aria-expanded="false" aria-controls="BankArgOthers">
+          Otras Preguntas
+        </button>
+      </h2>
+      <div id="BankArgOthers" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+        <div class="accordion-body">
+          ¿No pudimos aclarar todas tus dudas? No dudes en <a routerLink="/contacto"> contactarnos </a>, para que puedamos seguir mejorando esta seccion
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FAQ END -->
 
   <p id="describe_tu">Describe tu consulta:</p>
 
