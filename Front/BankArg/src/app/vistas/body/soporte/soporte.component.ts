@@ -16,7 +16,13 @@ export class SoporteComponent {
         confirmButtonText:"Aceptar"
     });
   };
-  public functionEnviar(){
+
+  public funcionEnviar(){
+    const areaText = document.getElementById("tu_consulta") as HTMLTextAreaElement;
+    if (areaText){
+      areaText.value = ""
+    }
+
     Swal.fire({
       title: "Consulta",
       text: "Su consulta fue enviada con exito",
