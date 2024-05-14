@@ -15,7 +15,14 @@ export class SoporteComponent {
         showConfirmButton:true,
         confirmButtonText:"Aceptar"
     });
-};
-
-
+  };
+  public functionEnviar(){
+    Swal.fire({
+      title: "Consulta",
+      text: "Su consulta fue enviada con exito",
+      icon: "success",
+      showConfirmButton:true,
+      confirmButtonText:"Aceptar"
+  });
+  }
 }

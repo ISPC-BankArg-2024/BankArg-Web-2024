@@ -1,8 +1,6 @@
-
 #soporte {
   text-align: center;
   margin-top: 24px;
-
 }
 
 #faq_pregunt {
@@ -10,6 +8,19 @@
   height: 36px;
   margin-top: 24px;
   text-align: center;
+}
+.accordion{
+  --bs-accordion-btn-bg:  #9bc1c2;
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-border-color: #398c91;
+  --bs-accordion-active-bg: #398c91;
+  --bs-accordion-active-color: white;
+  --bs-accordion-btn-icon-transition: 0.8;
+}
+
+#accordionFAQ{
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 #describe_tu {
