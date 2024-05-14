@@ -1,15 +1,16 @@
 <!-- Tabla de Plazo Fijo -->
-<div class="container">
+<div class="container" >
   <div class="row">
     <div class="col-md-12">
       <h3 class="text-center">Plazo Fijo</h3>
+      <br>
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Id -> Cuenta</th>
-            <th>CBU (cuenta)</th>
-            <th>Id -> Moneda</th>
+            <th>ID</th>
+            <th>ID Cuenta</th>
+            <th>CBU</th>
+            <th>Moneda</th>
             <th>Monto</th>
             <th>Fecha Inicio</th>
             <th>Fecha Vencimiento</th>
@@ -50,60 +51,68 @@
       </table>
     </div>
   </div>
-</div>
+  <br>
+  
 
-<!-- Crear Persona -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h3 class="text-center">Crear Plazo Fijo</h3>
+  <div class="container">
+    <br>
+    <br>
+    <h4 class="text-center">Simular Plazo Fijo</h4>
+    <div class="col align-self-center" id="contenedor_campos">
+      
+      
       <!-- Agrega los elementos de entrada para los datos del nuevo plazo fijo -->
-      <input
+      <input style="max-width: 100px;"
         type="text"
         [(ngModel)]="nuevoPlazo.id_plazo_fijo"
-        placeholder="id | Necesario para Editar"
+        placeholder="ID"
       />
       <input
         type="text"
         [(ngModel)]="nuevoPlazo.id_cuenta"
-        placeholder="id_cuenta"
+        placeholder="ID Cuenta"
       />
       <input
         type="text"
         [(ngModel)]="nuevoPlazo.id_tipo_moneda"
-        placeholder="id_tipo_moneda"
+        placeholder="Tipo Moneda"
       />
-      <input type="text" [(ngModel)]="nuevoPlazo.monto" placeholder="monto" />
+      <input type="text" [(ngModel)]="nuevoPlazo.monto" placeholder="Monto" />
       <input
         type="text"
         [(ngModel)]="nuevoPlazo.fecha_inicio"
-        placeholder="fecha_inicio (AAAA-MM-DD)"
+        placeholder="Inicio (AAAA-MM-DD)"
       />
       <input
         type="text"
         [(ngModel)]="nuevoPlazo.fecha_vencimiento"
-        placeholder="fecha_vencimiento (AAAA-MM-DD)"
+        placeholder="Fin (AAAA-MM-DD)"
       />
       <input
         type="text"
         [(ngModel)]="nuevoPlazo.interes"
-        placeholder="interes"
+        placeholder="Interes"
       />
 
-      <!-- Agrega más campos según tus necesidades -->
-
-      <br />
-      <!-- Agrega un botón para agregar la persona -->
-      <button class="btn btn-danger" (click)="crearButton(nuevoPlazo)">
-        Agregar Plazo Fijo
-      </button>
-      <br />
-      <button
-        class="btn btn-primary"
-        (click)="editarButton(nuevoPlazo.id_plazo_fijo, nuevoPlazo)"
-      >
+     
+    </div>
+      
+    <div class="botones">
+      <button class="btn btn-secondary" (click)="editarButton(nuevoPlazo.id_plazo_fijo, nuevoPlazo)">
         Editar
       </button>
+
+        <!-- Agrega un botón para agregar la persona -->
+
+      <button class="btn btn-dark" (click)="crearButton(nuevoPlazo)">
+        Agregar Plazo Fijo
+      </button>    
     </div>
+
   </div>
+
 </div>
+
+<br>
+<hr class="featurette-divider" >
+<br>
