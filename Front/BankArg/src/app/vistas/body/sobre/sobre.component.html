@@ -52,77 +52,67 @@
             alt=""
           />
         </article>
-        <article
-          class="col-sm-12 col-md-6 col-xl-6 d-flex justify-content-center flex-wrap sobre-nosotros-text"
-        >
+        <article class="col-sm-12 col-md-6 col-xl-6 d-flex justify-content-center flex-wrap sobre-nosotros-text">
           <h3 class="fw-bold">Sobre nosotros</h3>
-          <p class="fs-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            ultricies libero dui, sit amet fringilla enim mollis a. Cras
-            volutpat pretium commodo. Proin tempus malesuada massa, sit amet
-            mattis magna accumsan hendrerit. Curabitur ultrices elit mauris, at
-            laoreet ante egestas id.
+          <p class="fs-4" style="text-align: justify;">
+            Nuestra misión en BankArg es brindar un acceso rápido, seguro y conveniente a tus cuentas bancarias. Además de proporcionarte herramientas de gestión para que puedas aprovechar al máximo su potencial. 
           </p>
         </article>
+        
       </div>
     </section>
 
-    <section
-      class="ayuda-section container d-flex flex-wrap justify-content-center"
-    >
-      <div class="ayuda-border"></div>
-      <a routerLink="/soporte" class="necesito-ayuda fs-5">Necesito ayuda</a>
-    </section>
   </section>
 </main>
 
 <section class="container container-about">
   <div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold fs-3">No dudes en contactarnos</h1>
-      <p class="col-md-8 fs-5">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies
-        libero dui, sit amet fringilla enim mollis a. Cras volutpat pretium
-        commodo. Proin tempus malesuada massa, sit amet mattis magna accumsan
-        hendrerit. Curabitur ultrices elit mauris, at laoreet ante egestas id.
+    <div class="container-fluid py-5 text-center"> <!-- Envuelve todo el contenido y añade la clase text-center -->
+      <h1 class="display-5 fw-bold fs-3">En BankArg, la seguridad es nuestra prioridad</h1>
+      <p class="col-md-8 fs-5 mx-auto"> <!-- Ajusta el ancho del párrafo con mx-auto para centrarlo -->
+        Nuestra plataforma actúa como intermediario entre vos y el sistema bancario, garantizando una conexión segura y eficiente para realizar transacciones y gestionar tus cuentas de manera fácil y segura. 
+        Nuestro enfoque en la seguridad y la privacidad te ofrece la tranquilidad que necesitas para gestionar tus finanzas con confianza.
       </p>
-      <button routerLink="/contacto"  class="btn btn-primary btn-lg fs-5" type="button">
-        Contactanos
+      <button routerLink="/contacto" class="btn btn-primary btn-lg fs-5 mt-3" type="button"> <!-- Añade margen superior con mt-3 -->
+        Recomendaciones
       </button>
     </div>
   </div>
 
   <div class="row align-items-md-stretch">
     <div class="col-md-6">
-      <div class="h-100 p-5 text-bg-dark rounded-3 fs-5">
-        <h2>Sobre</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          ultricies libero dui, sit amet fringilla enim mollis a. Cras volutpat
-          pretium commodo. Proin tempus malesuada massa, sit amet mattis magna
-          accumsan hendrerit. Curabitur ultrices elit mauris, at laoreet ante
-          egestas id.
+      <div class="h-100 p-5 text-bg-dark rounded-3 fs-5 d-flex justify-content-center align-items-center"> <!-- Agrega clases d-flex, justify-content-center y align-items-center -->
+        <p class="text-center"> <!-- Añade la clase text-center para centrar el texto -->
+          Nuestra dedicación a la innovación tecnológica nos impulsa a desarrollar aplicaciones multiplataforma de vanguardia, utilizando las últimas tecnologías para ofrecerte una experiencia bancaria moderna y conveniente. 
         </p>
-        <button class="btn btn-outline-light fs-5" type="button">
-          Example button
-        </button>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="h-100 p-5 bg-light border rounded-3 fs-5">
-        <h2>Nosotros</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          ultricies libero dui, sit amet fringilla enim mollis a. Cras volutpat
-          pretium commodo. Proin tempus malesuada massa, sit amet mattis magna
-          accumsan hendrerit. Curabitur ultrices elit mauris, at laoreet ante
-          egestas id.
+      <div class="h-100 p-5 text-bg-dark border rounded-3 fs-5 d-flex justify-content-center align-items-center"> <!-- Agrega clases d-flex, justify-content-center y align-items-center -->
+        <p class="text-center"> <!-- Añade la clase text-center para centrar el texto -->
+          Estamos comprometidos con la mejora continua, buscando siempre nuevas formas de optimizar nuestros servicios y satisfacer tus necesidades cambiantes.
         </p>
-        <button class="btn btn-outline-secondary fs-5" type="button">
-          Example button
+      </div>
+    </div>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5 text-center"> 
+        <h1 class="display-5 fw-bold fs-3">¿Qué esperas para unirte a BankArg?</h1>
+        <p class="col-md-8 fs-5 mx-auto"> 
+          Registrate y sumate al banco digital que transforma tus finanzas
+        </p>
+        <button routerLink="/register" class="btn btn-primary btn-lg fs-5 mt-3" type="button">
+          Quiero ser parte!
         </button>
       </div>
     </div>
   </div>
+</section>
+
+<section
+class="ayuda-section container d-flex flex-wrap justify-content-center"
+>
+<div class="ayuda-border"></div>
+<a routerLink="/soporte" class="necesito-ayuda fs-5">Necesito ayuda</a>
 </section>
 <!-- End Body -->
