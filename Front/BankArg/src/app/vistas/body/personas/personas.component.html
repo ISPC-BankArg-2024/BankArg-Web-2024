@@ -1,9 +1,9 @@
 <!-- Tabla de Personas -->
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h3 class="text-center">Personas</h3>
-      <table class="table table-bordered">
+    <div class="col-md-12 table-responsive">
+      <h3 class="text-center m-5">Personas</h3>
+      <table class="table table-dark table-hover table-striped align-middle">
         <thead>
           <tr>
             <th>Id</th>
@@ -12,13 +12,15 @@
             <th>Id -> Tipo Documento</th>
             <th>Nro Doc</th>
             <th>Id -> Localidad</th>
-            <th>nro calle</th>
-            <th>calle</th>
-            <th>fecha nacimiento</th>
+            <th>Nro calle</th>
+            <th>Calle</th>
+            <th>Fecha nacimiento</th>
             <th>Id -> Sexo</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody>
+        
+        <tbody class="table-group-divider">
           <tr *ngFor="let persona of personasGral | async">
             <td>{{ persona.id_persona }}</td>
             <td>{{ persona.nombre }}</td>
@@ -46,12 +48,12 @@
               >
                 Editar
               </button> -->
-              <a
+              <button
                 class="btn btn-danger"
                 (click)="eliminarButton(persona.id_persona)"
               >
                 Eliminar
-              </a>
+              </button>
             </td>
           </tr>
         </tbody>
@@ -63,65 +65,65 @@
 <!-- Crear Persona -->
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h3 class="text-center">Crear Personas</h3>
+    <div class="col-md-12 mb-5">
+      <h3 class="text-center m-5">Crear Personas</h3>
       <!-- Agrega los elementos de entrada para los datos de la nueva persona -->
-      <input
+      <input class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaPersona.id_persona"
         placeholder="id | Necesario para Editar"
       />
-      <input
+      <input class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaPersona.nombre"
         placeholder="Nombre"
       />
-      <input
+      <input class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaPersona.apellido"
         placeholder="Apellido"
       />
-      <input
+      <input class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaPersona.id_tipo_doc"
         placeholder="id_tipo_doc"
       />
-      <input
+      <input class="p-2 m-1" 
         type="text"
         [(ngModel)]="nuevaPersona.nro_doc"
         placeholder="nro_doc"
       />
-      <input
+      <input class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaPersona.cod_loc"
         placeholder="cod_loc"
       />
-      <input
+      <input class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaPersona.nro_calle"
         placeholder="nro_calle"
       />
-      <input type="text" [(ngModel)]="nuevaPersona.calle" placeholder="calle" />
-      <input
+      <input class="p-2 m-1" type="text" [(ngModel)]="nuevaPersona.calle" placeholder="calle" />
+      <input class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaPersona.fecha_nac"
         placeholder="fechaNac (AAAA-MM-DD)"
       />
-      <input
+      <input class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaPersona.id_tipo_sexo"
         placeholder="id_tipo_sexo"
       />
       <!-- Agrega más campos según tus necesidades -->
 
-      <br />
+  
       <!-- Agrega un botón para agregar la persona -->
-      <button class="btn btn-danger" (click)="crearButton(nuevaPersona)">
+      <button class="btn btn-danger p-2 m-1" (click)="crearButton(nuevaPersona)">
         Agregar Persona
       </button>
-      <br />
+      
       <button
-        class="btn btn-primary"
+        class="btn btn-primary p-2 m-1"
         (click)="editarButton(nuevaPersona.id_persona, nuevaPersona)"
       >
         Editar
