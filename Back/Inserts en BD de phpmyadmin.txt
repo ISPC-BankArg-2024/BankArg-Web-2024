@@ -308,8 +308,6 @@ insert into provincias (provincia, cod_pais_id) values ('Otro', 30);
 insert into provincias (provincia, cod_pais_id) values ('Otro', 31);
 insert into provincias (provincia, cod_pais_id) values ('Otro', 32); -- ID: 239
 
----
-
 
 -- Localidades Top 5
 
