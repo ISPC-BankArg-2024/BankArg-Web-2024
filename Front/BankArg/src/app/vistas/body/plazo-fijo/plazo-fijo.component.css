@@ -1,0 +1,28 @@
+
+.container{
+    padding-top: 25px;
+    
+}
+
+.botones{
+   display: flex;
+   justify-content: flex-end;   
+   margin-top: 20px;
+   
+}
+.botones button{
+    margin-top: 20px;
+    margin-left: 5px;
+   
+}
+
+
+
+.container #contenedor_campos input{
+  
+    border: 1px;
+    margin: 2px;
+    background-color:whitesmoke;
+    
+}
+
