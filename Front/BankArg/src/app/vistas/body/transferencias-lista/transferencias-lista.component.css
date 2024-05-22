@@ -1,0 +1,12 @@
+tr, th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+tr, td{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+table {
+    padding: 15px;
+}
