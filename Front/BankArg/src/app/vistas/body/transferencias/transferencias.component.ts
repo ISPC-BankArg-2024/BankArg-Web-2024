@@ -4,6 +4,7 @@ import { TransferirService } from 'src/app/servicios/services/transferir.service
 import { Persona } from 'src/app/modelos/persona';
 import { ApiService } from 'src/app/servicios/api/api.service';
 import { Router } from '@angular/router';
+import { TransferenciasListaComponent } from '../transferencias-lista/transferencias-lista.component';
 
 @Component({
   selector: 'app-transferencias',
@@ -16,6 +17,10 @@ export class TransferenciasComponent {
     private cuenta: ApiService,
     private router: Router
   ) {}
+
+  transferencias: any = this.cuenta.getTransferencias();
+  transferenciasGral: any = this.cuenta.getTransferenciasGral();
+  
 
   persona1 = new Persona(1, 'admin', 10000.5, 'admin', '10101010');
 

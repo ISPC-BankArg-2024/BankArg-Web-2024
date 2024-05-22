@@ -31,9 +31,6 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
-  "overrides": {
-    "@babel/traverse": "7.22.6"
-  },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.6",
     "@angular/cli": "~15.2.6",

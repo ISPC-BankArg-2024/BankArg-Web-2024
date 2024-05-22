@@ -2,48 +2,49 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3 class="text-center">Transferencias</h3>
-      <table class="table table-bordered">
+      <h3 class="text-center m-5">Historial</h3>
+      <table class="table table-light table-hover table-striped align-middle">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Id -> Tipo transferencia</th>
-            <th>Id -> Cliente</th>
-            <th>Fecha</th>
-            <th>Monto</th>
-            <th>Cuenta Envio</th>
-            <th>Cuenta Recibo</th>
+            <th class="text-center align-middle">Id</th>
+            <th class="text-center align-middle">Id -> Tipo transferencia</th>
+            <th class="text-center align-middle">Id -> Cliente</th>
+            <th class="text-center align-middle">Fecha</th>
+            <th class="text-center align-middle">Monto</th>
+            <th class="text-center align-middle">Cuenta Envio</th>
+            <th class="text-center align-middle">Cuenta Recibo</th>
+            <th class="text-center align-middle"></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let transferencia of transferenciasGral | async">
-            <td>{{ transferencia.id_transferencia }}</td>
-            <td>
+             <td class="text-center align-middle">{{ transferencia.id_transferencia }}</td>
+            <td class="text-center align-middle">
               {{ transferencia.id_tipo_transferencia.id_tipo_transferencia }} ->
               {{ transferencia.id_tipo_transferencia.tipo_transferencia }}
-            </td>
-            <td>
+            </td > 
+            <td class="text-center align-middle">
               {{ transferencia.id_cliente.id_cliente }} ->
               {{ transferencia.id_cliente.nombre }}
               {{ transferencia.id_cliente.apellido }}
-            </td>
-            <td>{{ transferencia.fecha }}</td>
-            <td>${{ transferencia.monto }}</td>
-            <td>{{ transferencia.cuenta_envio }}</td>
-            <td>{{ transferencia.cuenta_recibo }}</td>
-            <td>
+            </td> 
+            <td class="text-center align-middle">{{ transferencia.fecha }}</td>
+            <td class="text-center align-middle">${{ transferencia.monto }}</td>
+            <td class="text-center align-middle">{{ transferencia.cuenta_envio }}</td>
+            <td class="text-center align-middle">{{ transferencia.cuenta_recibo }}</td>
+            <td class="text-center align-middle">
               <!-- <button
                     class="btn btn-primary"
                     (click)="editarButton(persona.id_persona, persona)"
                   >
                     Editar
                   </button> -->
-              <a
+              <button
                 class="btn btn-danger"
                 (click)="eliminarButton(transferencia.id_transferencia)"
               >
                 Eliminar
-              </a>
+              </button>
             </td>
           </tr>
         </tbody>
@@ -53,43 +54,53 @@
 </div>
 
 <!-- Crear Persona -->
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3 class="text-center">Crear transferencia</h3>
+      <h3 class="text-center m-5">Crear transferencia</h3>
+
       <!-- Agrega los elementos de entrada para los datos del nuevo transferencia -->
+
       <input
+        class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaTransferencia.id_transferencia"
         placeholder="id | Necesario para Editar"
       />
       <input
+        class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaTransferencia.id_tipo_transferencia"
         placeholder="id_tipo_transferencia"
       />
 
       <input
+        class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaTransferencia.id_cliente"
         placeholder="id_cliente"
       />
       <input
+        class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaTransferencia.fecha"
         placeholder="fecha (AAAA-MM-DD)"
       />
       <input
+        class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaTransferencia.monto"
         placeholder="monto"
       />
       <input
+        class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaTransferencia.cuenta_envio"
         placeholder="cuenta_envio"
       />
       <input
+        class="p-2 m-1"
         type="text"
         [(ngModel)]="nuevaTransferencia.cuenta_recibo"
         placeholder="cuenta_recibo"
@@ -97,14 +108,13 @@
 
       <!-- Agrega más campos según tus necesidades -->
 
-      <br />
       <!-- Agrega un botón para agregar la persona -->
-      <button class="btn btn-danger" (click)="crearButton(nuevaTransferencia)">
+
+      <button class="btn btn-danger p-2 m-1" (click)="crearButton(nuevaTransferencia)">
         Agregar transferencia
       </button>
-      <br />
       <button
-        class="btn btn-primary"
+        class="btn btn-primary p-2 m-1"
         (click)="
           editarButton(nuevaTransferencia.id_transferencia, nuevaTransferencia)
         "

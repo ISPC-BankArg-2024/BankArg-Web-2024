@@ -53,7 +53,47 @@
       
     </div>
   </section>
-</main>
+
+  <section class="container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center py-3">Historial</h3>
+          <table class="table table-responsive table-light table-hover table-striped align-middle mt-5 ">
+            <thead >
+              <tr >
+                <th class="text-center align-middle">Fecha</th>
+                <th class="text-center align-middle">Monto</th>
+                <th class="text-center align-middle">Cuenta Envio</th>
+                <th class="text-center align-middle">Cuenta Recibo</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let transferencia of transferenciasGral | async;let indice=index">
+                <td class="text-center align-middle" *ngIf="indice < 5">{{ transferencia.fecha }}</td>
+                <td class="text-center align-middle" *ngIf="indice < 5">${{ transferencia.monto }}</td>
+                <td class="text-center align-middle" *ngIf="indice < 5">{{ transferencia.cuenta_envio }}</td>
+                <td class="text-center align-middle" *ngIf="indice < 5">{{ transferencia.cuenta_recibo }}</td>
+                <!-- <td>
+                  <button
+                        class="btn btn-primary"
+                        (click)="editarButton(persona.id_persona, persona)"
+                      >
+                        Editar
+                      </button>
+                  
+                </td> -->
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
 <!-- End Body -->
 
 <!-- JS de transferencias -->

@@ -6,42 +6,42 @@
       <table class="table table-dark table-hover table-striped align-middle">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Id -> Tipo Documento</th>
-            <th>Nro Doc</th>
-            <th>Id -> Localidad</th>
-            <th>Nro calle</th>
-            <th>Calle</th>
-            <th>Fecha nacimiento</th>
-            <th>Id -> Sexo</th>
-            <th></th>
+            <th class="text-center align-middle">Id</th>
+            <th class="text-center align-middle">Nombre</th>
+            <th class="text-center align-middle">Apellido</th>
+            <th class="text-center align-middle">Id -> Tipo Documento</th>
+            <th class="text-center align-middle">Nro Doc</th>
+            <th class="text-center align-middle">Id -> Localidad</th>
+            <th class="text-center align-middle">Nro calle</th>
+            <th class="text-center align-middle">Calle</th>
+            <th class="text-center align-middle">Fecha nacimiento</th>
+            <th class="text-center align-middle">Id -> Sexo</th>
+            <th class="text-center align-middle"></th>
           </tr>
         </thead>
         
         <tbody class="table-group-divider">
           <tr *ngFor="let persona of personasGral | async">
-            <td>{{ persona.id_persona }}</td>
-            <td>{{ persona.nombre }}</td>
-            <td>{{ persona.apellido }}</td>
-            <td>
+            <td class="text-center align-middle">{{ persona.id_persona }}</td>
+            <td class="text-center align-middle">{{ persona.nombre }}</td>
+            <td class="text-center align-middle">{{ persona.apellido }}</td>
+            <td class="text-center align-middle">
               {{ persona.id_tipo_doc.id_tipo_doc }} ->
               {{ persona.id_tipo_doc.tipo_doc }}
             </td>
-            <td>{{ persona.nro_doc }}</td>
-            <td>
+            <td class="text-center align-middle">{{ persona.nro_doc }}</td>
+            <td class="text-center align-middle">
               {{ persona.cod_loc.cod_localidad }} ->
               {{ persona.cod_loc.localidad }}
             </td>
-            <td>{{ persona.nro_calle }}</td>
-            <td>{{ persona.calle }}</td>
-            <td>{{ persona.fecha_nac }}</td>
-            <td>
+            <td class="text-center align-middle">{{ persona.nro_calle }}</td>
+            <td class="text-center align-middle">{{ persona.calle }}</td>
+            <td class="text-center align-middle">{{ persona.fecha_nac }}</td>
+            <td class="text-center align-middle">
               {{ persona.id_tipo_sexo.id_tipo_sexo }} ->
               {{ persona.id_tipo_sexo.tipo }}
             </td>
-            <td>
+            <td class="text-center align-middle">
               <!-- <button
                 class="btn btn-primary"
                 (click)="editarButton(persona.id_persona, persona)"
