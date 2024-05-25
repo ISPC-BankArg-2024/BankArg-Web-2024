@@ -21,7 +21,7 @@ import { PagosComponent } from './vistas/pagos/pagos.component';
 import { ValidacionComponent } from './vistas/body/validacion/validacion.component';
 import { PrestamosComponent } from './vistas/body/prestamos/prestamos.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CuentaAhorroComponent } from './vistas/body/cuenta-ahorro/cuenta-ahorro.component';
 import { PersonasComponent } from './vistas/body/personas/personas.component';
 import { NgxPayPalModule } from 'ngx-paypal';
@@ -30,6 +30,7 @@ import { TransferenciasListaComponent } from './vistas/body/transferencias-lista
 import { PagoServiciosComponent } from './vistas/pagos/pago-servicios/pago-servicios.component';
 import { PagoPrestamosComponent } from './vistas/pagos/pago-prestamos/pago-prestamos.component';
 import { PagoTarjetasComponent } from './vistas/pagos/pago-tarjetas/pago-tarjetas.component';
+import { LoginService } from './servicios/auth/login.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,12 @@ import { PagoTarjetasComponent } from './vistas/pagos/pago-tarjetas/pago-tarjeta
     HttpClientModule,
     NgxPayPalModule
   ],
-  providers: [],
+  providers: [
+
+    HttpClient,
+    HttpClientModule,
+    LoginService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

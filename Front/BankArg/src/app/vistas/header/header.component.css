@@ -110,6 +110,15 @@ ul {
   transition: 0.8s all;
 }
 
+#logout-button {
+  background-color: red;
+  color: white !important;
+  border-radius: 25px;
+  padding: 7px 22px;
+  font-weight: 500;
+  transition: 0.8s all;
+}
+
 .nav-links ul .login-subrayado {
   padding: 8px 12px;
 }
