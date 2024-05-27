@@ -22,7 +22,7 @@
           <a routerLink="login" id="login-button">Ingresa</a>
         </li>
         <li *ngIf="userLoginOn" class="login-subrayado">
-          <a routerLink="" id="logout-button">Cerrar Sesion</a>
+          <a (click)='logout()' routerLink="" id="logout-button">Cerrar Sesion</a>
         </li>
         
       </ul>

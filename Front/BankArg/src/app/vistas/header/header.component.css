@@ -111,8 +111,8 @@ ul {
 }
 
 #logout-button {
-  background-color: red;
-  color: white !important;
+  background-color: #c5ddde;
+  color: #2c3333 !important;
   border-radius: 25px;
   padding: 7px 22px;
   font-weight: 500;
@@ -127,8 +127,12 @@ ul {
   width: 0;
 }
 
-.nav-links ul #login-button:hover {
+.nav-links ul #login-button:hover  {
   background-color: #c5ddde;
+}
+
+.nav-links ul #logout-button:hover  {
+  background-color: red;
 }
 
 nav .fa {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { LoginService } from 'src/app/servicios/auth/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -24,9 +25,18 @@ constructor (private loginService: LoginService){}
      }
      
    )
-   console.log(this.userLoginOn);
-   console.log(this.loginService.currentUserLoginOn);
    
+ }
+ logout(){
+  this.loginService.currentUserLoginOn.next(false);
+  console.log (this.userLoginOn);
+  Swal.fire({
+    title: 'Deslogueo Exitoso',
+    text: 'El usuario se ha deslogueado correctamente',
+    icon: 'info',
+    showConfirmButton: true,
+    confirmButtonText: 'Aceptar',
+  })
  }
 
   public change() {

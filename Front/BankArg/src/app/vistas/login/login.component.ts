@@ -64,6 +64,7 @@ export class LoginComponent implements OnInit {
   //   'admin@mail.com': '1234',
   // };
 
+  
   btnLogin = document.getElementById('btnLogin');
 
   iniciarSesion() {
@@ -79,7 +80,7 @@ export class LoginComponent implements OnInit {
       });
     } else {
       // TODO
-      this.loginService.loginStatus();
+      
       this.cuenta.login(this.login).subscribe(
         (res) => {
           console.log(res);
@@ -91,6 +92,7 @@ export class LoginComponent implements OnInit {
             showConfirmButton: true,
             confirmButtonText: 'Aceptar',
           }).then(() => {
+            this.loginService.loginStatus();
             this.router.navigate(['']);
             // window.location.href = '../body/home';
           });
