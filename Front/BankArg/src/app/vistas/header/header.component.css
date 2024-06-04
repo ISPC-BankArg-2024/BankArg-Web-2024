@@ -1,5 +1,3 @@
-
-
 .header-container {
   width: 100%;
   left: 0;
@@ -110,6 +108,15 @@ ul {
   transition: 0.8s all;
 }
 
+#logout-button {
+  background-color: #c5ddde;
+  color: #2c3333 !important;
+  border-radius: 25px;
+  padding: 7px 22px;
+  font-weight: 500;
+  transition: 0.8s all;
+}
+
 .nav-links ul .login-subrayado {
   padding: 8px 12px;
 }
@@ -120,6 +127,10 @@ ul {
 
 .nav-links ul #login-button:hover {
   background-color: #c5ddde;
+}
+
+.nav-links ul #logout-button:hover {
+  background-color: red;
 }
 
 nav .fa {
@@ -145,8 +156,8 @@ nav .fa {
     transition: 1s;
   }
   .active {
-  right: 0px;
-}
+    right: 0px;
+  }
 
   nav .fa {
     display: block;
