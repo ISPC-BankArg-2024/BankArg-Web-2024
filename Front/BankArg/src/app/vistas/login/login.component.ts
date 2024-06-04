@@ -10,6 +10,9 @@ import Swal from 'sweetalert2';
 import { Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/servicios/api/api.service';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+// import { LoginService } from 'src/app/servicios/auth/login.service';
+import { LoginService } from 'src/app/servicios/auth/login.service';
 
 @Component({
   selector: 'app-login',
@@ -32,7 +35,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private cuenta: ApiService,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) {
     //Creamos el grupo de controles para el formulario
     this.form = this.formBuilder.group({
@@ -74,9 +78,11 @@ export class LoginComponent implements OnInit {
       });
     } else {
       // TODO
+
       this.cuenta.login(this.login).subscribe(
         (res) => {
           console.log(res);
+          //this.currentUserLoginOn.next(true);
           Swal.fire({
             title: 'Login exitoso',
             text: 'El usuario se ha logueado correctamente',
@@ -84,6 +90,7 @@ export class LoginComponent implements OnInit {
             showConfirmButton: true,
             confirmButtonText: 'Aceptar',
           }).then(() => {
+            this.loginService.loginStatus();
             this.router.navigate(['']);
             // window.location.href = '../body/home';
           });
