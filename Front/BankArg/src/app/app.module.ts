@@ -21,7 +21,12 @@ import { PagosComponent } from './vistas/pagos/pagos.component';
 import { ValidacionComponent } from './vistas/body/validacion/validacion.component';
 import { PrestamosComponent } from './vistas/body/prestamos/prestamos.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { CuentaAhorroComponent } from './vistas/body/cuenta-ahorro/cuenta-ahorro.component';
 import { PersonasComponent } from './vistas/body/personas/personas.component';
 import { NgxPayPalModule } from 'ngx-paypal';
@@ -32,34 +37,45 @@ import { PagoPrestamosComponent } from './vistas/pagos/pago-prestamos/pago-prest
 import { PagoTarjetasComponent } from './vistas/pagos/pago-tarjetas/pago-tarjetas.component';
 import { LoginService } from './servicios/auth/login.service';
 
-@NgModule({ declarations: [
-        AppComponent,
-        HeaderComponent,
-        FooterComponent,
-        HomeComponent,
-        SobreComponent,
-        ProductosComponent,
-        TransferenciasComponent,
-        SoporteComponent,
-        ContactoComponent,
-        PerfilComponent,
-        HomeBankingComponent,
-        LoginComponent,
-        RegistroComponent,
-        PagosComponent,
-        ValidacionComponent,
-        PrestamosComponent,
-        CuentaAhorroComponent,
-        PersonasComponent,
-        PlazoFijoComponent,
-        TransferenciasListaComponent,
-        PagoServiciosComponent,
-        PagoPrestamosComponent,
-        PagoTarjetasComponent,
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgxPayPalModule], providers: [HttpClient, HttpClientModule, LoginService, provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    SobreComponent,
+    ProductosComponent,
+    TransferenciasComponent,
+    SoporteComponent,
+    ContactoComponent,
+    PerfilComponent,
+    HomeBankingComponent,
+    LoginComponent,
+    RegistroComponent,
+    PagosComponent,
+    ValidacionComponent,
+    PrestamosComponent,
+    CuentaAhorroComponent,
+    PersonasComponent,
+    PlazoFijoComponent,
+    TransferenciasListaComponent,
+    PagoServiciosComponent,
+    PagoPrestamosComponent,
+    PagoTarjetasComponent,
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPayPalModule,
+  ],
+  providers: [
+    HttpClient,
+    HttpClientModule,
+    LoginService,
+    provideHttpClient(withInterceptorsFromDi()),
+  ],
+})
 export class AppModule {}
