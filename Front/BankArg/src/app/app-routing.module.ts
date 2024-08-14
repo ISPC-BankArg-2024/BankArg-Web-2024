@@ -20,6 +20,7 @@ import { TransferenciasListaComponent } from './vistas/body/transferencias-lista
 import { PagoServiciosComponent } from './vistas/pagos/pago-servicios/pago-servicios.component';
 import { PagoPrestamosComponent } from './vistas/pagos/pago-prestamos/pago-prestamos.component';
 import { PagoTarjetasComponent } from './vistas/pagos/pago-tarjetas/pago-tarjetas.component';
+import { AuthGuard } from './servicios/auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,7 +29,7 @@ const routes: Routes = [
   { path: 'transferencias', component: TransferenciasComponent },
   { path: 'soporte', component: SoporteComponent },
   { path: 'contacto', component: ContactoComponent },
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'perfil', component: PerfilComponent, canActivate:[AuthGuard]},
   { path: 'homeBanking', component: HomeBankingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistroComponent },

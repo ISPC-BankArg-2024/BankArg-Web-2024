@@ -6,23 +6,23 @@ import { LoginComponent } from 'src/app/vistas/login/login.component';
   providedIn: 'root',
 })
 export class LoginService {
-  currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
-  );
+  public currentUserLoginOn = new BehaviorSubject<boolean>(false);
   constructor() {}
 
-  private isAuthenticated = false;
 
   login() {
-    this.isAuthenticated = true;
+    this.currentUserLoginOn.next(true);
+    console.log('User logged in:', this.currentUserLoginOn.value);
   }
 
   logout() {
-    this.isAuthenticated = false
+    this.currentUserLoginOn.next(false);
+    console.log('User logged out:', this.currentUserLoginOn.value)
   }
 
-  getIsAuthenticated() {
-    return this.isAuthenticated;
+  getIsAuthenticated():boolean {
+    console.log('Authenticated:', this.currentUserLoginOn);
+    return this.currentUserLoginOn.value;
   }
 
   loginStatus() {
