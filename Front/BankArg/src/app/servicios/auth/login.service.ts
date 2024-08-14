@@ -11,6 +11,20 @@ export class LoginService {
   );
   constructor() {}
 
+  private isAuthenticated = false;
+
+  login() {
+    this.isAuthenticated = true;
+  }
+
+  logout() {
+    this.isAuthenticated = false
+  }
+
+  getIsAuthenticated() {
+    return this.isAuthenticated;
+  }
+
   loginStatus() {
     this.currentUserLoginOn.next(true);
     console.log(this.currentUserLoginOn);
