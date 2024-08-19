@@ -13,6 +13,7 @@ import { ApiService } from 'src/app/servicios/api/api.service';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 // import { LoginService } from 'src/app/servicios/auth/login.service';
 import { LoginService } from 'src/app/servicios/auth/login.service';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -79,33 +80,65 @@ export class LoginComponent implements OnInit {
     } else {
       // TODO
 
-      this.cuenta.login(this.login).subscribe(
-        (res) => {
-          console.log(res);
-          //this.currentUserLoginOn.next(true);
+
+      this.cuenta.login(this.login).subscribe({
+        next:(token)=>{
+          sessionStorage.setItem('token', token.token);
+          console.log(token);
           Swal.fire({
             title: 'Login exitoso',
             text: 'El usuario se ha logueado correctamente',
             icon: 'success',
             showConfirmButton: true,
             confirmButtonText: 'Aceptar',
-          }).then(() => {
-            this.loginService.loginStatus();
-            this.router.navigate(['']);
-            // window.location.href = '../body/home';
           });
+          this.loginService.loginStatus();
+          this.router.navigate(['']);
         },
-        (err) => {
-          console.log(err);
+        error: (e:HttpErrorResponse) =>{
           Swal.fire({
-            title: 'Error',
+            title: `Error status ${e.status}`,
             text: 'El usuario o contraseña son incorrectos',
             icon: 'error',
             showConfirmButton: true,
             confirmButtonText: 'Aceptar',
           });
         }
-      );
+        
+      });
+     // this.cuenta.login(this.login).subscribe(
+     //   (res) => {
+     //     (token: string) => {
+     //       localStorage.setItem('token', token);
+     //       console.log('token');
+     //       
+     //     }
+         
+    //      //this.currentUserLoginOn.next(true);
+    //      Swal.fire({
+    //        title: 'Login exitoso',
+    //        text: 'El usuario se ha logueado correctamente',
+    //        icon: 'success',
+    //        showConfirmButton: true,
+    //        confirmButtonText: 'Aceptar',
+    //      }).then(() => {
+    //        this.loginService.loginStatus();
+    //        this.router.navigate(['']);
+    //        // window.location.href = '../body/home';
+    //      });
+    //    
+    //    (err: any) => {
+    //      console.log(err);
+    //      Swal.fire({
+    //        title: 'Error',
+    //        text: 'El usuario o contraseña son incorrectos',
+    //        icon: 'error',
+    //        showConfirmButton: true,
+    //        confirmButtonText: 'Aceptar',
+    //      });
+    //    }
+    //  }
+    //  ;
       // if (this.users[user] === pass) {
 
       //   Swal.fire({

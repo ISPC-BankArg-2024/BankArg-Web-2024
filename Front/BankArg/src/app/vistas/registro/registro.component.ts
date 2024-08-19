@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/servicios/api/api.service';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-registro',
@@ -16,10 +17,15 @@ export class RegistroComponent implements OnInit {
     private router: Router
   ) {
     this.form = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      // password2:["",[Validators.required], Validators.minLength(8)],
+      
       email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(60), Validators.pattern(/^[a-z ,.'-]+$/i)]],
+     lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(60), Validators.pattern(/^[a-z ,.'-]+$/i)]],
+      
+      //password: ['', [Validators.required, Validators.minLength(8)]],
+      // password2:["",[Validators.required], Validators.minLength(8)],
+      //email: ['', [Validators.required, Validators.email]],
       // telefono:["",[Validators.required]],
       // domicilio:["",[Validators.required]],
       // dni:["",[Validators.required]],
@@ -28,14 +34,17 @@ export class RegistroComponent implements OnInit {
     });
   }
 
+
+
   register: any;
 
   // TODO:
   ngOnInit() {
     this.register = {
-      username: '',
-      password: '',
-      email: '',
+      email:'',
+      password:'',
+      name:'',
+      lastname:''
     };
   }
 
@@ -49,8 +58,11 @@ export class RegistroComponent implements OnInit {
     Yo: '5678',
   };
 
-  get username() {
-    return this.form.get('username');
+  get name() {
+    return this.form.get('name');
+  }
+  get lastname() {
+    return this.form.get('lastname');
   }
   get password() {
     return this.form.get('password');
@@ -78,7 +90,8 @@ export class RegistroComponent implements OnInit {
   // }
 
   public Registrar() {
-    let usernameV = this.username?.value;
+    let nameV = this.name?.value;
+    let lastnameV = this.lastname?.value;
     let passwordV = this.password?.value;
     // let password2V = this.password2?.value
     let emailV = this.email?.value;
@@ -89,9 +102,9 @@ export class RegistroComponent implements OnInit {
     // let dniV = this.dni?.value
 
     // console.log(usernameV,passwordV,password2V,emailV,telefonoV,domicilioV,nombreV,apellidoV)
-    console.log(usernameV, passwordV, emailV);
     if (
-      usernameV === '' ||
+      nameV === '' ||
+      lastnameV === '' ||
       passwordV === '' ||
       // password2V === "" ||
       emailV === ''
@@ -111,67 +124,99 @@ export class RegistroComponent implements OnInit {
       // alert("Debe completar todos los campos");
     } else {
       // Verificar si el usuario ya existe
-      if (this.users[usernameV] === undefined) {
+      if (this.form.valid) {
         // Verificar si las contraseñas coinciden
         // if (passwordV === password2V) {
-        if (passwordV === passwordV) {
+        //if (passwordV === passwordV) {
           // Validar email
           if (true) {
             // Agregar usuario
-            this.users[usernameV] = passwordV;
+            //this.users[nameV] = passwordV;
 
             // TODO:
-            this.cuenta.register(this.register).subscribe(
-              (res) => {
-                console.log(res);
-              },
-              (err) => {
-                console.log(err);
-              }
-            );
 
-            Swal.fire({
-              title: 'Registro exitoso',
-              text:
-                'El usuario ' +
-                this.register.username +
-                ' se ha registrado correctamente',
-              icon: 'success',
-              showConfirmButton: true,
-              confirmButtonText: 'Aceptar',
-            }).then(() => {
-              this.router.navigate(['']);
-              // window.location.href = './login.html';
-            });
-          } else {
-            Swal.fire({
-              title: 'Error',
-              text: 'El email no es valido',
-              icon: 'error',
-              showConfirmButton: true,
-              confirmButtonText: 'Aceptar',
+
+            this.cuenta.register(this.register).subscribe({
+              next:(token)=>{
+                localStorage.setItem('token', token);
+                console.log(token);
+                Swal.fire({
+                  title: 'Registro exitoso',
+                  text: 'Te has registrado correctamente',
+                  icon: 'success',
+                  showConfirmButton: true,
+                  confirmButtonText: 'Aceptar',
+                });
+                this.router.navigate(['']);
+              },
+              error: (e:HttpErrorResponse) =>{
+                Swal.fire({
+                  title: `Error status ${e.status}`,
+                  text: `${e.message}`,
+                  icon: 'error',
+                  showConfirmButton: true,
+                  confirmButtonText: 'Aceptar',
+                });
+              }
+              
             });
           }
-        } else {
-          Swal.fire({
-            title: 'Error',
-            text: 'Las contraseñas no coinciden',
-            icon: 'error',
-            showConfirmButton: true,
-            confirmButtonText: 'Aceptar',
-          });
-          // alert("Las contraseñas no coinciden");
         }
-      } else {
-        Swal.fire({
-          title: 'Error',
-          text: 'El usuario ya existe',
-          icon: 'error',
-          showConfirmButton: true,
-          confirmButtonText: 'Aceptar',
-        });
-        // alert("El usuario ya existe");
       }
+
+
+
+//            this.cuenta.register(this.register).subscribe(
+//              (res) => {
+//                console.log(res);
+//              },
+//              (err) => {
+//                console.log(err);
+//              }
+//            );
+//
+//            Swal.fire({
+//              title: 'Registro exitoso',
+//              text:
+//                'El correo ' +
+//                this.register.email +
+//                ' se ha registrado correctamente',
+//              icon: 'success',
+//              showConfirmButton: true,
+//              confirmButtonText: 'Aceptar',
+//            }).then(() => {
+//              this.router.navigate(['']);
+//              // window.location.href = './login.html';
+//            });
+//          } else {
+//            Swal.fire({
+//              title: 'Error',
+//              text: 'El email no es valido',
+//              icon: 'error',
+//              showConfirmButton: true,
+//              confirmButtonText: 'Aceptar',
+//            });
+//          }
+//        } else {
+//          Swal.fire({
+//            title: 'Error',
+//            text: 'Las contraseñas no coinciden',
+//            icon: 'error',
+//            showConfirmButton: true,
+//            confirmButtonText: 'Aceptar',
+//          });
+//          // alert("Las contraseñas no coinciden");
+//        }
+//      } else {
+//        Swal.fire({
+//          title: 'Error',
+//          text: 'El usuario ya existe',
+//          icon: 'error',
+//          showConfirmButton: true,
+//          confirmButtonText: 'Aceptar',
+//        });
+//        // alert("El usuario ya existe");
+//      }
     }
   }
-}
+

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { response } from 'express';
+import { ApiService } from 'src/app/servicios/api/api.service';
 
 import Swal from 'sweetalert2';
 
@@ -9,7 +11,35 @@ import Swal from 'sweetalert2';
   styleUrls: ['./perfil.component.css'],
 })
 export class PerfilComponent {
-  constructor(private router: Router) {}
+
+user: any;
+
+ngOnInit(){
+  this.user = {
+    name: '',
+    lastname: '',
+    email: '',
+    id: ''
+  }
+
+  this.cuenta.userDetails();
+}
+
+  constructor(private router: Router, private cuenta: ApiService) {
+
+    this.cuenta.userDetails().subscribe(data =>{
+    this.user.name= data.name;
+    this.user.lastname= data.lastname;
+    this.user.email= data.email;
+    this.user.id= data.id;
+
+
+    })
+
+  }
+
+
+
 
   editarButton() {
     Swal.fire({
