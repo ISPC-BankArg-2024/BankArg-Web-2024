@@ -22,9 +22,9 @@ export class HeaderComponent {
       },
     });
   }
-  logout() {
+  logout():void {
+    sessionStorage.removeItem('token');
     this.loginService.currentUserLoginOn.next(false);
-    console.log(this.userLoginOn);
     Swal.fire({
       title: 'Deslogueo Exitoso',
       text: 'El usuario se ha deslogueado correctamente',

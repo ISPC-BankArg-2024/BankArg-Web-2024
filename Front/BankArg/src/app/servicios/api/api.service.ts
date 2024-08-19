@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, toArray } from 'rxjs';
 
@@ -13,15 +13,26 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
+  ngOnInit(){
+    const myToken = {'Authorizathion': `${sessionStorage.getItem('token')}`};
+  }
+
   // Registrarse (email, username, password)
   register(UserData: any): Observable<any> {
-    return this.http.post('http://127.0.0.1:8000/api/auth/signup/', UserData);
+    return this.http.post('http://localhost:3001/api/users', UserData);
     // return this.http.post('http://127.0.0.1:8000/api/auth/register/', UserData);
   }
 
   // Logearse
   login(UserData: any): Observable<any> {
-    return this.http.post('http://127.0.0.1:8000/api/auth/login/', UserData);
+    return this.http.post('http://localhost:3001/api/users/login', UserData);
+  }
+  //Datos para dashboard
+  userDetails(): Observable<any> {
+
+    const token = sessionStorage.getItem('token')
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    return this.http.get('http://localhost:3001/api/users/details', {headers:headers});
   }
 
   ObtenerUltimosMovimientos(): Observable<any> {
