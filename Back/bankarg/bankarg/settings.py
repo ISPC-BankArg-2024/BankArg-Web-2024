@@ -126,9 +126,9 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "bankarg",
         "USER": "root",
-        "PASSWORD": "",
+        "PASSWORD": "password",
         "HOST": "localhost",
-        "PORT": "3306",
+        "PORT": "3307",
         "OPTIONS": {
             "sql_mode": "traditional",
         },
