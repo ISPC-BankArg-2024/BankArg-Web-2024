@@ -1,10 +1,10 @@
 <main class="main">
-  <h1 id="soporte">Preguntas Frecuentes</h1>
+  <h1 id="soporte">Soporte</h1>
 
   
   <!-- FAQ START -->
   <div class="accordion container" id="accordionFAQ">
-
+    <h2 id="pregFrec">Preguntas frecuentes</h2>
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#whoBankArg" aria-expanded="false" aria-controls="collapseOne">
@@ -103,27 +103,26 @@
   
   <!-- FAQ END -->
 
-  <div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5 text-center"> 
+    <div class="container-fluid py-5 text-center" id="alguna-consulta"> 
       <h1 class="display-5 fw-bold fs-3">¿Tenés alguna consulta?</h1>
       <p class="col-md-8 fs-5 mx-auto"> 
         Escribinos
       </p>
       <textarea id="tu_consulta" rows="4" cols="50" placeholder="Quisiera ayuda sobre..."></textarea>
 
-  <button id="Enviar" (click)="funcionEnviar()">Enviar</button>
-
-  <button id="seleccionar_fecha" (click)="funcionNoActiva()">
-    Seleccionar fecha:
-  </button>
-
-  <button id="Solicitar_turno" (click)="funcionNoActiva()">
-    Solicitar turno
-  </button>
+      <button id="Enviar" (click)="funcionEnviar()">Enviar</button>
     </div>
-  </div>
 
-  
+    <div class="container-fluid py-5 text-center" id="turnero">
+      <button id="seleccionar_fecha" (click)="funcionNoActiva()">
+        Seleccionar fecha:
+      </button>
+    
+      <button id="Solicitar_turno" (click)="funcionNoActiva()">
+        Solicitar turno
+      </button>
+    </div>
+
 </main>
 
 <!-- JS de Soporte -->

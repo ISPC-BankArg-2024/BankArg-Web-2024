@@ -19,10 +19,12 @@ export class SoporteComponent {
 
   public funcionEnviar(){
     const areaText = document.getElementById("tu_consulta") as HTMLTextAreaElement;
+
+    // Limpia el campo de texto
     if (areaText){
       areaText.value = ""
     }
-
+    // Muestra alerta con SweetAlert
     Swal.fire({
       title: "Consulta",
       text: "Su consulta fue enviada con exito",

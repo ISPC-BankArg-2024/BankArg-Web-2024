@@ -19,8 +19,12 @@
 }
 
 #accordionFAQ{
-  margin-top: 24px;
+  margin-top: 2%;
   margin-bottom: 24px;
+  border-top: 2px solid black;
+  padding-top: 2%;
+  text-align: center;
+  width: 75%;
 }
 
 #describe_tu {
@@ -71,4 +75,19 @@
 #Solicitar_turno {
   background-color: #2c3333;
   color: #ffffff;
+}
+
+#pregFrec {
+  width: 350px;
+  text-align: center;
+}
+
+#alguna-consulta,
+#turnero {
+  margin-top: 2%;
+  margin-bottom: 24px;
+  border-top: 2px solid black;
+  padding-top: 2%;
+  text-align: center;
+  width: 75%;
 }
