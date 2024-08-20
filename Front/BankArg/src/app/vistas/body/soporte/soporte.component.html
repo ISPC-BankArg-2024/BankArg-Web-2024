@@ -103,9 +103,13 @@
   
   <!-- FAQ END -->
 
-  <p id="describe_tu">Describe tu consulta:</p>
-
-  <textarea id="tu_consulta" rows="4" cols="50" placeholder="Quisiera ayuda sobre..."></textarea>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5 text-center"> 
+      <h1 class="display-5 fw-bold fs-3">¿Tenés alguna consulta?</h1>
+      <p class="col-md-8 fs-5 mx-auto"> 
+        Escribinos
+      </p>
+      <textarea id="tu_consulta" rows="4" cols="50" placeholder="Quisiera ayuda sobre..."></textarea>
 
   <button id="Enviar" (click)="funcionEnviar()">Enviar</button>
 
@@ -116,8 +120,14 @@
   <button id="Solicitar_turno" (click)="funcionNoActiva()">
     Solicitar turno
   </button>
+    </div>
+  </div>
+
+  
 </main>
 
 <!-- JS de Soporte -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="../js/soporte.js"></script>
+
+
